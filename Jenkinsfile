@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    echo "Esta corriendo esto"
     
     stages {
         stage('Solicitar Datos de Entrada') {
