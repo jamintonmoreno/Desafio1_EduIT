@@ -2,29 +2,29 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'Login', description: 'Por favor ingrese su nombre de usuario', defaultValue: '')
-        string(name: 'NombreApellido', description: 'Ingrese su Nombre y Apellido', defaultValue: '')
-        choice(name: 'Departamento', choices: ['Contabilidad', 'Finanzas', 'Tecnología'], description: 'Escoja Departamento al que pertenece')
+        string(name: 'Login', description: 'Please enter your username', defaultValue: '')
+        string(name: 'Nombre_Apellido', description: 'Please enter your First and Last Name', defaultValue: '')
+        choice(name: 'Departament', choices: ['Accounting', 'Finance', 'Technology'], description: 'Choose department to which you belong')
     }
 
     stages {
-        stage('Crear usuario') {
+        stage('Create user') {
             steps {
-                sh "sudo useradd -m -s /bin/bash -c '${NombreApellido}' ${Login}"
+                sh "sudo useradd -m -s /bin/bash -c '${Nombre_Apellido}' ${Login}"
             }
         }
 
-        stage('Generar password temporal') {
+        stage('Generate temporal password') {
             steps {
                 script {
                     def passwordTemporal = sh(script: 'sudo openssl rand -base64 10', returnStdout: true).trim()
-                    echo "Su contraseña es: ${passwordTemporal}"
+                    echo "Your password is: ${passwordTemporal}"
                     env.PASSWORD_TEMPORAL = passwordTemporal
                 }
             }
         }
 
-        stage('Asignar contraseña temporal') {
+        stage('Assign temporary password') {
             steps {
                 sh "echo ${Login}: ${PASSWORD_TEMPORAL} | sudo chpasswd"
             }
