@@ -3,14 +3,14 @@ pipeline {
 
     parameters {
         string(name: 'Login', description: 'Please enter your username', defaultValue: '')
-        string(name: 'Nombre_Apellido', description: 'Please enter your First and Last Name', defaultValue: '')
+        string(name: 'NombreApellido', description: 'Please enter your First and Last Name', defaultValue: '')
         choice(name: 'Departament', choices: ['Accounting', 'Finance', 'Technology'], description: 'Choose department to which you belong')
     }
 
     stages {
         stage('Create user') {
             steps {
-                sh "sudo useradd -m -s /bin/bash -c '${Nombre_Apellido}' ${Login}"
+                sh "sudo useradd -m -s /bin/bash -c '${NombreApellido}' ${Login}"
             }
         }
 
