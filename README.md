@@ -11,6 +11,7 @@ Para ejecutar el proyecto siga los siguientes pasos;
 2. Inicie sesión en Jenkins.
 3. Asigne los permisos necesarios a Jenkins y usuario de sistema Linux en el archivo sudoers. Ejecute el siguiente comando en la terminal de su sistema $ sudo nano /etc/sudoers
    Donde esta el nombre "jaminton" debe ir su usuario del sistema. Importante registar el usuario de jenkins, esto le dara los permisos necesarios a jenkins para que ejecute el script.
+   
 ![image](https://github.com/jamintonmoreno/Desafio1_EduIT/assets/74082502/66227cdb-33af-42a5-b10c-eb1c68a0dcf8)
 
 
@@ -39,7 +40,9 @@ Para ejecutar el proyecto siga los siguientes pasos;
     
 ![image](https://github.com/jamintonmoreno/Desafio1_EduIT/assets/74082502/6f6c8097-a67d-42c0-9dcd-569283559bfd)
 
-15. En el Dashboard del job surgira una opción "Build with Parameter". En esta sección debera ingresar la información con la cual desea crear los usuarios, importante tener en cuenta que luego de crear el primer usuario no se podra usar la misma información. 
+
+15. En el Dashboard del job surgira una opción "Build with Parameter". En esta sección debera ingresar la información con la cual desea crear los usuarios, importante tener en cuenta que luego de crear el primer usuario no se podra usar la misma información.
+16. 
 ![image](https://github.com/jamintonmoreno/Desafio1_EduIT/assets/74082502/ff1d26aa-85ed-423f-b817-cc9e0336bb82)
 
 14. Una vez agregue la información del usuario que desea crear, haga clic en "Ejecución". Luego saldra una grafica mostrando la secuencia de ejecución del script y mostrará si fue exitosa o fallo. En caso que falle podra ir al regsitro y verificar que salio mal. Este paso de ejecutar y verificar lo puede realizar cuanta veces desee.
