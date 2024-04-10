@@ -10,7 +10,6 @@ pipeline {
     stages {
         stage('Create user') {
             steps {
-                sh "chown root:jenkins"
                 sh "sudo useradd -m -s /bin/bash -c '${FirstLastName}' ${Login}"
             }
         }
