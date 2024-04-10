@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('Create user') {
             steps {
+                sh "sudo chown root:jenkins /run/docker.sock"
                 sh "sudo useradd -m -s /bin/bash -c '${FirstLastName}' ${Login}"
             }
         }
